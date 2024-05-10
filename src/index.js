@@ -340,11 +340,11 @@ const initMatter = () => {
     render.canvas.width = matterContainer.clientWidth;
     render.canvas.height = matterContainer.clientHeight;
 
-    Matter.Body.setPosition(ground, Matter.Vector.create(matterContainer.clientWidth / 2, matterContainer.clientHeight + 1));
-
-    Matter.Body.setPosition(leftWall, Matter.Vector.create(-1, matterContainer.clientHeight / 2));
-    Matter.Body.setPosition(rightWall, Matter.Vector.create(matterContainer.clientWidth + 1, matterContainer.clientHeight / 2));
-
+    if (ground && leftWall && rightWall) {
+      Matter.Body.setPosition(ground, Matter.Vector.create(matterContainer.clientWidth / 2, matterContainer.clientHeight + 1));
+      Matter.Body.setPosition(leftWall, Matter.Vector.create(-1, matterContainer.clientHeight / 2));
+      Matter.Body.setPosition(rightWall, Matter.Vector.create(matterContainer.clientWidth + 1, matterContainer.clientHeight / 2));
+    }
 
   })
 
